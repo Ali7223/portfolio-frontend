@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
+import './Project.css';
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -11,18 +12,25 @@ function Projects() {
   }, []);
 
   return (
-    <div>
-      <h1>My Projects</h1>
-      <ul>
-        {projects.map((p) => (
-          <li key={p.id}>
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
-          </li>
+    <div className="projects-wrapper">
+      <div className="projects-container">
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            )}
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
-
 export default Projects;

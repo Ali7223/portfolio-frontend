@@ -1,0 +1,28 @@
+import React, { useEffect, useState } from "react";
+
+function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/projects")
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <div>
+      <h1>My Projects</h1>
+      <ul>
+        {projects.map((p) => (
+          <li key={p.id}>
+            <h3>{p.title}</h3>
+            <p>{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Projects;

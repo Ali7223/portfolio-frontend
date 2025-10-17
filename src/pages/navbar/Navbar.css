@@ -1,0 +1,26 @@
+.navBar {
+  display: flex;                 /* Arrange links horizontally */
+  justify-content: flex-end;     /* Push all links to the right */
+  align-items: center;           /* Vertically center links */
+  background-color: #111;        /* Dark background */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;    /* or fixed if you want it sticky */
+  z-index: 1000;
+  
+}
+
+/* Navbar links */
+.navBar a {
+  color: #fff;                   /* White text */
+  text-decoration: none;         /* Remove underline */
+  margin-left: 1.5rem;           /* Spacing between links */
+  font-weight: 500;
+  transition: color 0.3s ease;   /* Smooth hover effect */
+}
+
+/* Hover effect for links */
+.navBar a:hover {
+  color: #f39c12;                /* Orange on hover */
+  text-decoration: underline;    /* Optional underline on hover */
+}
