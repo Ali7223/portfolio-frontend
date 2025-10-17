@@ -4,8 +4,10 @@ import './Project.css';
 function Projects() {
   const [projects, setProjects] = useState([]);
 
+  const API_URL = "https://portfolio-backend-3-hop9.onrender.com/api/projects"
+
   useEffect(() => {
-    fetch("http://localhost:8080/api/projects")
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error(err));
